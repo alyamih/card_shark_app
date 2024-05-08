@@ -1,5 +1,6 @@
 import 'package:card_shark_app/model/result_item.dart';
 import 'package:card_shark_app/pages/home_page.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -125,31 +126,40 @@ class _CreateNewResultPageState extends State<CreateNewResultPage> {
                         const SizedBox(
                           width: 8,
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(bottom: 8),
-                          child: Text(
-                            page.value == 0
-                                ? 'Game'
-                                : page.value == 1
-                                    ? 'Opponents'
-                                    : page.value == 2
-                                        ? 'Strategize your game'
-                                        : page.value == 3
-                                            ? 'Your bet'
-                                            : page.value == 4
-                                                ? 'Beginnig of the game'
-                                                : page.value == 5
-                                                    ? 'Betting during the game'
-                                                    : page.value == 6
-                                                        ? 'Bluff'
-                                                        : page.value == 7
-                                                            ? 'A major factor in the game'
-                                                            : 'The outcome of current game',
-                            style: const TextStyle(
-                                fontFamily: 'SF Pro Text',
-                                color: Color(0xFF278AEF),
-                                fontSize: 15,
-                                fontWeight: FontWeight.w500),
+                        Expanded(
+                          child: Padding(
+                            padding: const EdgeInsets.only(bottom: 8),
+                            child: Row(
+                              children: [
+                                Flexible(
+                                  child: Text(
+                                    page.value == 0
+                                        ? 'Game'
+                                        : page.value == 1
+                                            ? 'Opponents'
+                                            : page.value == 2
+                                                ? 'Strategize your game'
+                                                : page.value == 3
+                                                    ? 'Your bet'
+                                                    : page.value == 4
+                                                        ? 'Beginnig of the game'
+                                                        : page.value == 5
+                                                            ? 'Betting during the game'
+                                                            : page.value == 6
+                                                                ? 'Bluff'
+                                                                : page.value ==
+                                                                        7
+                                                                    ? 'A major factor in the game'
+                                                                    : 'The outcome of current game',
+                                    style: const TextStyle(
+                                        fontFamily: 'SF Pro Text',
+                                        color: Color(0xFF278AEF),
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.w500),
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ],
